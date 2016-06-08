@@ -1,0 +1,55 @@
+lib/
+target/
+.coverage.*
+*.spec
+parts/
+# PyInstaller
+gravity.list
+*,cover
+*.log
+pihole.log
+# Django stuff:
+# C extensions
+/.phpintel
+# Installer logs
+.eggs/
+# Distribution / packaging
+lib64/
+# Byte-compiled / optimized / DLL files
+*$py.class
+pip-delete-this-directory.txt
+nosetests.xml
+develop-eggs/
+build/
+pip-log.txt
+var/
+eggs/
+coverage.xml
+*.so
+__pycache__/
+.installed.cfg
+*.egg-info/
+.hypothesis/
+dist/
+# Translations
+docs/_build/
+*.pot
+*.manifest
+*.mo
+# Sphinx documentation
+*.egg
+.tox/
+sdist/
+*.py[cod]
+#Ipython Notebook
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+.cache
+.ipynb_checkpoints
+env/
+.coverage
+.Python
+downloads/
+htmlcov/
+# Unit test / coverage reports
+# PyBuilder
+#  Usually these files are written by a python script from a template
