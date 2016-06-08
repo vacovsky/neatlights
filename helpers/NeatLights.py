@@ -87,6 +87,7 @@ class NeatLights:
         ws.ws2811_render(self.leds)
 
     def party(self, style, internal=False):
+        temp_led_count = 150
         if internal:
             temp_led_count = int(self.LED_COUNT / 15)
         cycle_counter = 0
@@ -125,7 +126,7 @@ class NeatLights:
 
             # used to determine end of a task
             cycle_counter += 1
-            if internal:
+            if not internal:
                 if cycle_counter % self.LED_COUNT == 0:
                     iterations -= 1
             else:
