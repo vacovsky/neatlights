@@ -24,7 +24,6 @@ def send_patterns(count):
         r.publish(config.PUBSUB_NAME, blink_patterns.get_gradient_rand())
         r.publish(config.PUBSUB_NAME, blink_patterns.get_fade_rand())
 
-
         time.sleep(random())
         count -= 1
 

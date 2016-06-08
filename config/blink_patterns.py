@@ -1,6 +1,7 @@
 from random import randint, random
-LED_COUNT = 150
+LED_COUNT = 630
 
+# print (240 + 240 + 150)
 
 css3colors = [
     'aliceblue',

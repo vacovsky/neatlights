@@ -7,7 +7,7 @@ from collections import deque
 
 class NeatLights:
     LED_CHANNEL = 0
-    LED_COUNT = 150
+    LED_COUNT = 630
     LED_FREQ_HZ = 800000
     LED_DMA_NUM = 5
     LED_GPIO = 18
@@ -35,7 +35,7 @@ class NeatLights:
     def start(self, delegate, style):
         print("Setting up LED environment...")
         self.LED_BRIGHTNESS = style['brightness'] or 64
-        self.LED_COUNT = style['led_count'] or 150
+        self.LED_COUNT = style['led_count'] or 630
         self.leds = ws.new_ws2811_t()
         cleanup = style['cleanup'] == 1 or True
 
@@ -233,7 +233,7 @@ class NeatLights:
         head = GRB_Parser().convert(style['head'] or ['red'])
         empty = GRB_Parser().convert(style['empty'] or ['black'])
         base = GRB_Parser().convert(style['base'] or ['blue'])
-        length = style['led_count'] or 150
+        length = style['led_count'] or 630
         speed = style['speed'] or 0.05
         iterations = style['iterations'] or 1
         chain = head + (empty * (length - len(head)))
