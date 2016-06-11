@@ -2,16 +2,12 @@ import RPi.GPIO as GPIO
 import time
 from RedisHelper import RedisHelper
 
-PIN_ID = 21
-DEBUG = 1
-CHANNEL = "OfficeAmbience"
-
 
 class AmbientLightSensor:
     channel = None
     pin_id = None
 
-    def __init__(self, channel=CHANNEL, pin_id=PIN_ID):
+    def __init__(self, channel, pin_id):
         GPIO.setmode(GPIO.BCM)
         self.channel = channel
         self.pin_id = pin_id

@@ -32,7 +32,7 @@ class RedisHelper:
 
 
 if __name__ == '__main__':
-    r = Redis()
+    r = RedisHelper()
     r.subscribe('BlinkBlock')
     for message in r.PubSub.listen():
         print(message)

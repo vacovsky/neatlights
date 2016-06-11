@@ -1,3 +1,9 @@
 REDDIS_CONN = "192.168.111.50"
 PUBSUB_NAME = 'ws2812b'
-LED_COUNT = 150
+LED_COUNT = 480
+
+
+# Ambient Light Sensor
+PIN_ID = 21
+DEBUG = 1
+AMBIENT_LIGHT_CHANNEL = "OfficeAmbience"

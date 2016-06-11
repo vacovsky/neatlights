@@ -1,7 +1,9 @@
 from helpers.NeatLights import NeatLights
+from helpers.AmbientLightSensor import AmbientLightSensor
 from helpers.RedisHelper import RedisHelper
 import json
 from config.config import *
+from threading import Thread
 
 
 class Main:
@@ -10,6 +12,10 @@ class Main:
 
     def __init__(self):
         self.redis = RedisHelper()
+
+    def light_sense(self):
+        Thread(target=AmbientLightSensor, args=(
+            AMBIENT_LIGHT_CHANNEL, PIN_ID)).start()
 
     def listen(self):
         self.redis.subscribe(PUBSUB_NAME)
@@ -51,5 +57,6 @@ class Main:
 
 
 if __name__ == '__main__':
-    print("Starting LED listener for PUBSUB: %s." % PUBSUB_NAME)
-    Main().listen()
+    # print("Starting LED listener for PUBSUB: %s." % PUBSUB_NAME)
+    # Main().listen()
+    Main().light_sense()
