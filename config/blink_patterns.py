@@ -255,7 +255,7 @@ gradient = {
     'color_range': ['blue', 'yellow'],
     'led_count': LED_COUNT,  # number of LEDs being operated
     'speed': 0.02,  # speed at which lights change
-    'offset': 1,  # number of LEDs to jump per tick
+    'offset': 0,  # number of LEDs to jump per tick
     'iterations': 1,
     'direction': -1,  # forward or back, and how many pixels to move.
     'cleanup': 0
