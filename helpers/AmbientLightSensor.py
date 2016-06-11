@@ -25,4 +25,5 @@ if __name__ == '__main__':
         if ambientlight > 0:
             print(ambientlight)
         else:
+            ambientlight = 0
             print("bright light!")
