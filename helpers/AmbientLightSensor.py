@@ -27,7 +27,8 @@ class AmbientLightSensor:
         print('*' * 50)
         while True:
             value = self.RCtime(self.pin_id, interval=1)
-            RedisHelper().publish(self.channel, value)
+            # .publish(self.channel, value)
+            RedisHelper().Connection.set(self.channel, value=value)
             print('Light Level: ', value,
                   '                   ', end="\r", flush=True)
 

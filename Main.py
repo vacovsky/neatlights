@@ -49,6 +49,10 @@ class Main:
                 else:
                     method = print
 
+
+                if datadict['sendlight'] == 1:
+                    # modify brightness based on ambient light if true
+                    datadict['birghtness'] = 
                 controller.start(method, datadict)
                 self.completed += 1
                 print('Completed runs: ' + str(self.completed))
