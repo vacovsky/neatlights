@@ -14,9 +14,8 @@ class Main:
         self.redis = RedisHelper()
 
     def light_sense(self):
-        func = AmbientLightSensor().start
-        Thread(target=func, args=(
-            AMBIENT_LIGHT_CHANNEL, PIN_ID)).start()
+        func = AmbientLightSensor(AMBIENT_LIGHT_CHANNEL, PIN_ID).start
+        Thread(target=func, args=(1))
 
     def listen(self):
         self.redis.subscribe(PUBSUB_NAME)
