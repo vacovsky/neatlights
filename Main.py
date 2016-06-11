@@ -15,7 +15,7 @@ class Main:
 
     def light_sense(self):
         func = AmbientLightSensor(AMBIENT_LIGHT_CHANNEL, PIN_ID).start
-        func()
+        func(1)
         # Thread(target=func, args=(1))
 
     def listen(self):
