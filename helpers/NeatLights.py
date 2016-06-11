@@ -74,7 +74,6 @@ class NeatLights:
         finally:
             ws.ws2811_fini(self.leds)
             ws.delete_ws2811_t(self.leds)
-
             if clean_up:
                 self.cleanup()
 

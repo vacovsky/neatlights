@@ -1,6 +1,6 @@
 from random import randint, random
 LED_COUNT = 480
-BRIGHTNESS = 250
+BRIGHTNESS = 128
 # print (240 + 240 + 150)
 
 css3colors = [
