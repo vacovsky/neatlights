@@ -19,7 +19,10 @@ def RCtime(RCpin):
 
 if __name__ == '__main__':
     ambientlight = 0
-    while ambientlight > 0:
+    while True:  # ambientlight > 0:
         ambientlight = RCtime(PIN_ID)
-        print(ambientlight)
         time.sleep(1)
+        if ambientlight > 0:
+            print(ambientlight)
+        else:
+            print("bright light!")
