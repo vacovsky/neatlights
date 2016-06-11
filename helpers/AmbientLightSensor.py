@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-from RedisHelper import RedisHelper
+from helpers.RedisHelper import RedisHelper
 
 
 class AmbientLightSensor:
