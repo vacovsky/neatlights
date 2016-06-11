@@ -86,6 +86,9 @@ class NeatLights:
 
     def room_lighting(self, style):
         colors = GRB_Parser().convert(style['color'])
+        print('brightness: ', style['brightness'])
+        print('senselight: ', style['senselight'])
+        print('color: ', style['color'])
         for i in range(self.LED_COUNT):
             ws.ws2811_led_set(self.channel, i, colors[0])
             # Send the LED color data to the hardware.

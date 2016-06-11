@@ -174,6 +174,7 @@ room_lighting = {
     'color': ['white'],
     'brightness': 100,
     'led_count': LED_COUNT,
+    'senselight': 1
 }
 
 diamonds = {
