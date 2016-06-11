@@ -46,13 +46,16 @@ class Main:
                     method = controller.gradient
                 elif datadict['method_name'] == 'typewriter':
                     method = controller.typewriter
+                elif datadict['method_name'] == 'room_lighting':
+                    method = controller.room_lighting
+                    datadict['cleanup'] = 0
                 else:
                     method = print
 
-
-                if datadict['sendlight'] == 1:
+                if datadict['senselight'] == 1:
                     # modify brightness based on ambient light if true
-                    datadict['birghtness'] = 
+                    datadict['brightness'] = RedisHelper().Connection.get(
+                        AMBIENT_LIGHT_CHANNEL)
                 controller.start(method, datadict)
                 self.completed += 1
                 print('Completed runs: ' + str(self.completed))
@@ -63,5 +66,5 @@ class Main:
 
 if __name__ == '__main__':
     print("Starting LED listener for PUBSUB: %s." % PUBSUB_NAME)
-    Main().light_sense()
-    # Main().listen()
+    # Main().light_sense()
+    Main().listen()

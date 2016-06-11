@@ -168,6 +168,14 @@ def rand_brightness(minbright=0, maxbright=128):
 def rand_speed():
     return random() / randint(1, 20)
 
+room_lighting = {
+    'style_name': 'Room Lighting',
+    'method_name': 'room_lighting',
+    'color': ['white'],
+    'brightness': 100,
+    'led_count': LED_COUNT,
+}
+
 diamonds = {
     'style_name': 'Diamonds',
     'method_name': 'party',

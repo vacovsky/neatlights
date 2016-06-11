@@ -84,8 +84,18 @@ class NeatLights:
             ws.ws2811_led_set(self.channel, i, 0x000000)
         ws.ws2811_render(self.leds)
 
+    def room_lighting(self, style):
+        colors = GRB_Parser().convert(style['color'])
+        for i in range(self.LED_COUNT):
+            ws.ws2811_led_set(self.channel, i, colors[0])
+            # Send the LED color data to the hardware.
+        resp = ws.ws2811_render(self.leds)
+        if resp != 0:
+            raise RuntimeError(
+                'ws2811_render failed with code {0}'.format(resp))
+
     def party(self, style, internal=False):
-        temp_led_count = 150
+        temp_led_count = 480
         if internal:
             temp_led_count = int(self.LED_COUNT / 15)
         cycle_counter = 0
