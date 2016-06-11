@@ -286,7 +286,7 @@ class NeatLights:
 
         for n in range(length):
             cnt += 1
-            chain.append(div * cnt)
+            chain.append(int(div * cnt))
             if n % length == 0:
                 if n < 0:
                     n = n * -1
@@ -298,7 +298,7 @@ class NeatLights:
                 color = chain[
                     (i + offset) % len(list(chain))
                 ]
-                print(self.channel, i, color, chain)
+                #print(self.channel, i, color, chain)
                 ws.ws2811_led_set(self.channel, i, color)
 
             resp = ws.ws2811_render(self.leds)
