@@ -42,10 +42,10 @@ class Main:
                 else:
                     method = print
 
-                try:
-                    controller.start(method, datadict)
-                except Exception as e:
-                    raise e
+                #try:
+                controller.start(method, datadict)
+                #except Exception as e:
+                #    raise e
 
                 self.completed += 1
                 print('Completed runs: ' + str(self.completed))

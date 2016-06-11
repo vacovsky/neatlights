@@ -34,45 +34,45 @@ class NeatLights:
 
     def start(self, delegate, style):
         print("Setting up LED environment...")
-        try:
-            self.LED_BRIGHTNESS = style['brightness'] or 64
-            self.LED_COUNT = style['led_count'] or 630
-            self.leds = ws.new_ws2811_t()
-            cleanup = style['cleanup'] == 1 or True
+        #try:
+        self.LED_BRIGHTNESS = style['brightness'] or 64
+        self.LED_COUNT = style['led_count'] or 630
+        self.leds = ws.new_ws2811_t()
+        cleanup = style['cleanup'] == 1 or True
 
-            # Initialize all channels to off
-            for channum in range(2):
-                self.channel = ws.ws2811_channel_get(self.leds, channum)
-                ws.ws2811_channel_t_count_set(self.channel, 0)
-                ws.ws2811_channel_t_gpionum_set(self.channel, 0)
-                ws.ws2811_channel_t_invert_set(self.channel, 0)
-                ws.ws2811_channel_t_brightness_set(self.channel, 0)
+        # Initialize all channels to off
+        for channum in range(2):
+            self.channel = ws.ws2811_channel_get(self.leds, channum)
+            ws.ws2811_channel_t_count_set(self.channel, 0)
+            ws.ws2811_channel_t_gpionum_set(self.channel, 0)
+            ws.ws2811_channel_t_invert_set(self.channel, 0)
+            ws.ws2811_channel_t_brightness_set(self.channel, 0)
 
-            self.channel = ws.ws2811_channel_get(self.leds, self.LED_CHANNEL)
+        self.channel = ws.ws2811_channel_get(self.leds, self.LED_CHANNEL)
 
-            ws.ws2811_channel_t_count_set(self.channel, self.LED_COUNT)
-            ws.ws2811_channel_t_gpionum_set(self.channel, self.LED_GPIO)
-            ws.ws2811_channel_t_invert_set(self.channel, self.LED_INVERT)
-            ws.ws2811_channel_t_brightness_set(
-                self.channel, self.LED_BRIGHTNESS)
+        ws.ws2811_channel_t_count_set(self.channel, self.LED_COUNT)
+        ws.ws2811_channel_t_gpionum_set(self.channel, self.LED_GPIO)
+        ws.ws2811_channel_t_invert_set(self.channel, self.LED_INVERT)
+        ws.ws2811_channel_t_brightness_set(
+            self.channel, self.LED_BRIGHTNESS)
 
-            ws.ws2811_t_freq_set(self.leds, self.LED_FREQ_HZ)
-            ws.ws2811_t_dmanum_set(self.leds, self.LED_DMA_NUM)
+        ws.ws2811_t_freq_set(self.leds, self.LED_FREQ_HZ)
+        ws.ws2811_t_dmanum_set(self.leds, self.LED_DMA_NUM)
 
-            # Initialize library with LED configuration.
-            resp = ws.ws2811_init(self.leds)
-            if resp != 0:
-                raise RuntimeError(
-                    'ws2811_init failed with code {0}'.format(resp))
+        # Initialize library with LED configuration.
+        resp = ws.ws2811_init(self.leds)
+        if resp != 0:
+            raise RuntimeError(
+                'ws2811_init failed with code {0}'.format(resp))
 
-            print(
-                "Starting {0} via {1}...".format(
-                    style['style_name'], style['method_name'])
-            )
-            delegate(style)
-        finally:
-            if cleanup:
-                self.cleanup()
+        print(
+            "Starting {0} via {1}...".format(
+                style['style_name'], style['method_name'])
+        )
+        delegate(style)
+        #finally:
+        #if cleanup:
+        self.cleanup()
 
     def cleanup(self):
         self.LED_BRIGHTNESS = 0
