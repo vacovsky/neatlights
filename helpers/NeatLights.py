@@ -62,22 +62,14 @@ class NeatLights:
         if resp != 0:
             raise RuntimeError('ws2811_init failed with code {0}'.format(resp))
 
-        try:
-            print(
-                "Starting {0} via {1}...".format(
-                    style['style_name'] or 'unknown', style['method_name'] or 'unkown')
-            )
-            delegate(style)
+        print(
+            "Starting {0} via {1}...".format(
+                style['style_name'] or 'unknown', style['method_name'] or 'unkown')
+        )
+        delegate(style)
 
-            if cleanup:
-                self.cleanup()
-
-        except Exception as e:
-            raise e
-
-        finally:
-            ws.ws2811_fini(self.leds)
-            ws.delete_ws2811_t(self.leds)
+        if cleanup:
+            self.cleanup()
 
     def cleanup(self):
         self.LED_BRIGHTNESS = 0
