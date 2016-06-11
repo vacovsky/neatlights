@@ -73,7 +73,7 @@ class NeatLights:
                 self.cleanup()
 
         except Exception as e:
-            print(e)
+            raise e
 
         finally:
             ws.ws2811_fini(self.leds)
@@ -175,11 +175,10 @@ class NeatLights:
         cycle_counter = 1
         colors = GRB_Parser().convert(style['fuse_fire'])
         explode_colors = style['explosion'] or ['red', 'orange']
-        speed = style['speed'] or .002
-        offset = style['offset'] or 1
-        iterations = style['iterations'] or 1
-        direction = style['direction'] or 1
-        # * (style['led_count'] - len(style['comet_head']))
+        speed = style['speed']
+        offset = style['offset']
+        iterations = style['iterations']
+        direction = style['direction']
         trail_colors = GRB_Parser().convert(
             style['fuse_unlit'] * (self.LED_COUNT - len(colors)))
 
@@ -211,14 +210,13 @@ class NeatLights:
             if explode:
                 print('Exploding!')
                 explode = False
-                self.LED_BRIGHTNESS = style['explosion_brightness'] or 100
+                self.LED_BRIGHTNESS = style['explosion_brightness'],
                 explosion = {
                     'style_name': style['style_name'],
                     'method_name': style['method_name'],
                     'css3_colors': explode_colors,
-                    # speed at which lights change
-                    'speed': style['explosion_speed'] or .25,
-                    'offset': 1,  # number of LEDs to jump per tick
+                    'speed': style['explosion_speed'],
+                    'offset': 1,
                     'reverse_after': 500,
                     'iterations': 1,
                     'direction': 1,
@@ -279,7 +277,7 @@ class NeatLights:
 
     def gradient(self, style):
         cycle_counter = 1
-        iterations = style['iterations'] or 1
+        iterations = style['iterations']
         length = style['led_count']
         speed = style['speed']
         direction = style['direction']
