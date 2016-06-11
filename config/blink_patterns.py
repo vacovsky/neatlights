@@ -1,6 +1,6 @@
 from random import randint, random
 LED_COUNT = 630
-
+BRIGHTNESS = 250
 # print (240 + 240 + 150)
 
 css3colors = [
@@ -161,8 +161,8 @@ def rand_color(length=1):
     return result
 
 
-def rand_brightness():
-    return randint(1, 255)
+def rand_brightness(minbright=0, maxbright=128):
+    return randint(minbright, maxbright)
 
 
 def rand_speed():
@@ -176,7 +176,7 @@ diamonds = {
         'orange', 'purple', 'green',
         'teal', 'fuchsia', 'white'
     ],
-    'brightness': 255,  # 255 max
+    'brightness': BRIGHTNESS,  # 255 max
     'led_count': LED_COUNT,  # number of LEDs being operated
     'speed': 0.01,  # speed at which lights change
     'offset': 1,  # number of LEDs to jump per tick
@@ -191,7 +191,7 @@ strobe = {
     'method_name': 'comet',
     'comet_head': ['white'],
     'comet_tail': ['black'],
-    'brightness': 255,
+    'brightness': BRIGHTNESS,
     'led_count': LED_COUNT,  # number of LEDs being operated
     'speed': 0.02,  # speed at which lights change
     'offset': 1,  # number of LEDs to jump per tick
@@ -205,7 +205,7 @@ comet = {
     'method_name': 'comet',
     'comet_head': ['white', 'red', 'orange', 'yellow'],
     'comet_tail': ['black'],
-    'brightness': 255,
+    'brightness': BRIGHTNESS,
     'led_count': LED_COUNT,  # number of LEDs being operated
     'speed': 0.02,  # speed at which lights change
     'offset': 1,  # number of LEDs to jump per tick
@@ -223,7 +223,7 @@ fuse = {
     'explosion_speed': .2,
     'explosion_brightness': 100,
     'explode_time': 50,
-    'brightness': 255,
+    'brightness': BRIGHTNESS,
     'led_count': LED_COUNT,  # number of LEDs being operated
     'speed': 0.02,  # speed at which lights change
     'offset': 1,  # number of LEDs to jump per tick
@@ -236,12 +236,12 @@ fuse = {
 slub = {
     'style_name': 'Slub',
     'method_name': 'typewriter',
-    'brightness': 255,
+    'brightness': BRIGHTNESS,
     'head': ['blue', 'teal', 'purple'],
     'base': ['red', 'orange', 'yellow', 'blue', 'green', 'teal'],
     'empty': ['black'],
     'led_count': LED_COUNT,  # number of LEDs being operated
-    'speed': 0.05,  # speed at which lights change
+    'speed': 0.02,  # speed at which lights change
     'offset': 1,  # number of LEDs to jump per tick
     'iterations': 1,
     'direction': 1,  # forward or back, and how many pixels to move.
@@ -251,7 +251,7 @@ slub = {
 gradient = {
     'style_name': 'Gradient',
     'method_name': 'gradient',
-    'brightness': 255,
+    'brightness': BRIGHTNESS,
     'color_range': ['blue', 'yellow'],
     'led_count': LED_COUNT,  # number of LEDs being operated
     'speed': 0.02,  # speed at which lights change
