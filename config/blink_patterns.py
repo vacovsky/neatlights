@@ -171,7 +171,7 @@ def rand_speed():
 room_lighting = {
     'style_name': 'Room Lighting',
     'method_name': 'room_lighting',
-    'color': ['white'],
+    'color': rand_color(),
     'brightness': 100,
     'led_count': LED_COUNT,
     'senselight': 1

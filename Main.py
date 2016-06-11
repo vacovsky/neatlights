@@ -54,8 +54,14 @@ class Main:
 
                 if datadict['senselight'] == 1:
                     # modify brightness based on ambient light if true
-                    datadict['brightness'] = RedisHelper().Connection.get(
-                        AMBIENT_LIGHT_CHANNEL)
+                    br = int(RedisHelper().Connection.get(
+                        AMBIENT_LIGHT_CHANNEL))
+                    if br is None or br == 0:
+                        br = 1
+                    if br >= 255:
+                        br = 255
+                    datadict['brightness'] = br
+
                 controller.start(method, datadict)
                 self.completed += 1
                 print('Completed runs: ' + str(self.completed))
