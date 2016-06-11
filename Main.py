@@ -59,4 +59,4 @@ class Main:
 if __name__ == '__main__':
     print("Starting LED listener for PUBSUB: %s." % PUBSUB_NAME)
     Main().light_sense()
-    Main().listen()
+    # Main().listen()
