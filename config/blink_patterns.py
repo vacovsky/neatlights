@@ -1,5 +1,5 @@
 from random import randint, random
-LED_COUNT = 630
+LED_COUNT = 480
 BRIGHTNESS = 250
 # print (240 + 240 + 150)
 
@@ -365,7 +365,7 @@ def get_gradient_rand():
         'offset': 1,  # number of LEDs to jump per tick
         'iterations': 1,
         'direction': -1,  # forward or back, and how many pixels to move.
-        'cleanup': 0
+        'cleanup': 1
     }
 
 

@@ -11,17 +11,17 @@ def send_patterns(count):
 
         # r.publish(config.PUBSUB_NAME, blink_patterns.fuse)
         # r.publish(config.PUBSUB_NAME, blink_patterns.diamonds)
-        # r.publish(config.PUBSUB_NAME, blink_patterns.comet)
+        #r.publish(config.PUBSUB_NAME, blink_patterns.comet)
         # r.publish(config.PUBSUB_NAME, blink_patterns.strobe)
-        # r.publish(config.PUBSUB_NAME, blink_patterns.slub)
-        r.publish(config.PUBSUB_NAME, blink_patterns.gradient)
+        #r.publish(config.PUBSUB_NAME, blink_patterns.slub)
+        # r.publish(config.PUBSUB_NAME, blink_patterns.gradient)
 
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_kaboom_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_diamonds_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_comet_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_strobe_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_slub_rand())
-        # r.publish(config.PUBSUB_NAME, blink_patterns.get_gradient_rand())
+        r.publish(config.PUBSUB_NAME, blink_patterns.get_gradient_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_fade_rand())
 
         time.sleep(random())
