@@ -45,7 +45,7 @@ class Main:
                 try:
                     controller.start(method, datadict)
                 except Exception as e:
-                    print(e)
+                    raise e
 
                 self.completed += 1
                 print('Completed runs: ' + str(self.completed))
