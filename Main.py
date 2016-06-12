@@ -23,7 +23,7 @@ class Main:
         for message in self.redis.PubSub.listen():
             try:
                 data = None
-                if not isinstance(message['data'], str):
+                if isinstance(message['data'], bytes):
                     data = message['data'].decode('utf8')
                 else:
                     data = message["data"]
