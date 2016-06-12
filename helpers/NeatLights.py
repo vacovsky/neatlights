@@ -86,7 +86,7 @@ class NeatLights:
 
     def room_lighting(self, style):
         colors = GRB_Parser().convert(style['color'])
-        self.LED_BRIGHTNESS = 
+        # self.LED_BRIGHTNESS = style['brightness']
         print('brightness: ', self.LED_BRIGHTNESS)
         print('senselight: ', style['senselight'])
         print('color: ', style['color'])
