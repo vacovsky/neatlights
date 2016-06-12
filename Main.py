@@ -22,8 +22,8 @@ class Main:
         self.redis.subscribe(PUBSUB_NAME)
         for message in self.redis.PubSub.listen():
             try:
-                print(data)
                 data = message["data"]
+                print(data)
                 if data == 1:
                     continue
                 datastr = data.decode('utf8').replace("'", '"')
