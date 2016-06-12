@@ -57,10 +57,10 @@ class Main:
                     br = int(RedisHelper().Connection.get(
                         AMBIENT_LIGHT_CHANNEL))
                     if br is None or br == 0:
-                        br = 1
-                    if br >= 255:
-                        br = 255
-                    datadict['brightness'] = br
+                        br = -1
+                    if br <= -255:
+                        br = -254
+                    datadict['brightness'] = 255 + br
 
                 controller.start(method, datadict)
                 self.completed += 1
