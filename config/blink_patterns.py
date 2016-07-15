@@ -1,7 +1,8 @@
 from random import randint, random
 LED_COUNT = 480
-BRIGHTNESS = 128
+BRIGHTNESS = 1
 # print (240 + 240 + 150)
+SENSELIGHT = 0
 
 css3colors = [
     'aliceblue',
@@ -168,14 +169,16 @@ def rand_brightness(minbright=0, maxbright=128):
 def rand_speed():
     return random() / randint(1, 20)
 
-room_lighting = {
-    'style_name': 'Room Lighting',
-    'method_name': 'room_lighting',
-    'color': rand_color(),
-    'brightness': 100,
-    'led_count': LED_COUNT,
-    'senselight': 1
-}
+
+def room_lighting():
+    return {
+        'style_name': 'Room Lighting',
+        'method_name': 'room_lighting',
+        'color': rand_color(),
+        'brightness': BRIGHTNESS,
+        'led_count': LED_COUNT,
+        'senselight': SENSELIGHT
+    }
 
 diamonds = {
     'style_name': 'Diamonds',
@@ -192,7 +195,8 @@ diamonds = {
     'reverse_after': 500,
     'iterations': 1,
     'direction': 2,
-    'cleanup': 1
+    'cleanup': 1,
+    'senselight': SENSELIGHT
 }
 
 strobe = {
@@ -206,7 +210,8 @@ strobe = {
     'offset': 1,  # number of LEDs to jump per tick
     'iterations': 2,
     'direction': -18,  # forward or back, and how many pixels to move.
-    'cleanup': 1
+    'cleanup': 1,
+    'senselight': SENSELIGHT
 }
 
 comet = {
@@ -220,7 +225,8 @@ comet = {
     'offset': 1,  # number of LEDs to jump per tick
     'iterations': 1,
     'direction': -1,  # forward or back, and how many pixels to move.
-    'cleanup': 1
+    'cleanup': 1,
+    'senselight': SENSELIGHT
 }
 
 fuse = {
@@ -238,7 +244,8 @@ fuse = {
     'offset': 1,  # number of LEDs to jump per tick
     'iterations': 1,
     'direction': 1,  # forward or back, and how many pixels to move.
-    'cleanup': 1
+    'cleanup': 1,
+    'senselight': SENSELIGHT
 }
 
 
@@ -254,7 +261,8 @@ slub = {
     'offset': 1,  # number of LEDs to jump per tick
     'iterations': 1,
     'direction': 1,  # forward or back, and how many pixels to move.
-    'cleanup': 1
+    'cleanup': 1,
+    'senselight': SENSELIGHT
 }
 
 gradient = {
@@ -267,7 +275,8 @@ gradient = {
     'offset': 0,  # number of LEDs to jump per tick
     'iterations': 1,
     'direction': -1,  # forward or back, and how many pixels to move.
-    'cleanup': 0
+    'cleanup': 0,
+    'senselight': SENSELIGHT
 }
 
 
@@ -287,7 +296,8 @@ def get_strobe_rand():
         'iterations': 1,
         # forward or back, and how many pixels to move.
         'direction': randint(1, 20),
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
 
 
@@ -306,7 +316,8 @@ def get_fade_rand():
         'offset': 1,
         'brightness': rand_brightness(),
         # forward or back, and how many pixels to move.
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
 
 
@@ -322,7 +333,8 @@ def get_comet_rand():
         'offset': 1,  # number of LEDs to jump per tick
         'iterations': 1,
         'direction': -1,  # forward or back, and how many pixels to move.
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
 
 
@@ -342,7 +354,8 @@ def get_kaboom_rand():
         'offset': 1,  # number of LEDs to jump per tick
         'iterations': 1,
         'direction': 1,  # forward or back, and how many pixels to move.
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
 
 
@@ -359,7 +372,8 @@ def get_slub_rand():
         'offset': 1,  # number of LEDs to jump per tick
         'iterations': 1,
         'direction': -1,  # forward or back, and how many pixels to move.
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
 
 
@@ -374,7 +388,8 @@ def get_gradient_rand():
         'offset': 1,  # number of LEDs to jump per tick
         'iterations': 1,
         'direction': -1,  # forward or back, and how many pixels to move.
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
 
 
@@ -390,5 +405,6 @@ def get_diamonds_rand():
         'reverse_after': 500,
         'iterations': 1,
         'direction': 2,
-        'cleanup': 1
+        'cleanup': 1,
+        'senselight': SENSELIGHT
     }
