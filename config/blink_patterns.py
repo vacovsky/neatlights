@@ -1,6 +1,6 @@
 from random import randint, random
 LED_COUNT = 480
-BRIGHTNESS = 1
+BRIGHTNESS = 10
 # print (240 + 240 + 150)
 SENSELIGHT = 0
 

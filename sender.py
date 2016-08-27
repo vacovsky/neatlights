@@ -1,14 +1,13 @@
 from helpers.RedisHelper import RedisHelper
 from config import config
 from config import blink_patterns
-from random import random
 import time
 
 
 def send_patterns(count):
-    count = 0
     r = RedisHelper()
-    while count < 1000:
+    inc = 0
+    while inc < count:
 
         # r.publish(config.PUBSUB_NAME, blink_patterns.fuse)
         # r.publish(config.PUBSUB_NAME, blink_patterns.diamonds)
@@ -25,7 +24,7 @@ def send_patterns(count):
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_slub_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_gradient_rand())
         # r.publish(config.PUBSUB_NAME, blink_patterns.get_fade_rand())
-        count += 1
-        time.sleep(.5)
+        inc += 1
+        time.sleep(.3)
 
-send_patterns(1)
+send_patterns(100)
