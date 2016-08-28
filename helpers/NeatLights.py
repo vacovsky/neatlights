@@ -98,6 +98,34 @@ class NeatLights:
             raise RuntimeError(
                 'ws2811_render failed with code {0}'.format(resp))
 
+    def room_lighting_on(self, style):
+        colors = GRB_Parser().convert(style['color'])
+        # self.LED_BRIGHTNESS = style['brightness']
+        print('brightness: ', self.LED_BRIGHTNESS)
+        print('senselight: ', style['senselight'])
+        print('color: ', style['color'])
+        for i in range(self.LED_COUNT):
+            ws.ws2811_led_set(self.channel, i, colors[0])
+            # Send the LED color data to the hardware.
+        resp = ws.ws2811_render(self.leds)
+        if resp != 0:
+            raise RuntimeError(
+                'ws2811_render failed with code {0}'.format(resp))
+
+    def room_lighting_off(self, style):
+        colors = GRB_Parser().convert(style['color'])
+        self.LED_BRIGHTNESS = style['brightness']
+        print('brightness: ', 0)
+        print('senselight: ', style['senselight'])
+        print('color: ', style['color'])
+        for i in range(self.LED_COUNT):
+            ws.ws2811_led_set(self.channel, i, colors[0])
+            # Send the LED color data to the hardware.
+        resp = ws.ws2811_render(self.leds)
+        if resp != 0:
+            raise RuntimeError(
+                'ws2811_render failed with code {0}'.format(resp))
+
     def party(self, style, internal=False):
         temp_led_count = 480
         if internal:

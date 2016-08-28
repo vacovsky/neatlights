@@ -1,9 +1,9 @@
 from helpers.NeatLights import NeatLights
 from helpers.AmbientLightSensor import AmbientLightSensor
 from helpers.RedisHelper import RedisHelper
+from helpers.ButtonControl import ButtonControl
 import json
 from config.config import *
-from threading import Thread
 
 
 class Main:
@@ -50,6 +50,12 @@ class Main:
                 elif datadict['method_name'] == 'room_lighting':
                     method = controller.room_lighting
                     datadict['cleanup'] = 0
+                elif datadict['method_name'] == 'room_lighting_off':
+                    method = controller.room_lighting_off
+                    datadict['cleanup'] = 0
+                elif datadict['method_name'] == 'room_lighting_on':
+                    method = controller.room_lighting_on
+                    datadict['cleanup'] = 0
                 else:
                     method = print
 
@@ -74,4 +80,5 @@ class Main:
 if __name__ == '__main__':
     print("Starting LED listener for PUBSUB: %s." % PUBSUB_NAME)
     # Main().light_sense()
+    ButtonControl(22).init_button_listener()
     Main().listen()

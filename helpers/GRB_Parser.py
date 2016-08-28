@@ -5,7 +5,7 @@ class GRB_Parser:
 
     def __init__(self):
         """
-        pass in list of text colors like ['red', 'blue', 'green'] 
+        pass in list of text colors like ['red', 'blue', 'green']
         and get back GRB hex version of those colors.
         """
 

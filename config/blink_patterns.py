@@ -1,7 +1,6 @@
 from random import randint, random
 LED_COUNT = 480
 BRIGHTNESS = 10
-# print (240 + 240 + 150)
 SENSELIGHT = 0
 
 css3colors = [
@@ -176,6 +175,28 @@ def room_lighting():
         'method_name': 'room_lighting',
         'color': rand_color(),
         'brightness': BRIGHTNESS,
+        'led_count': LED_COUNT,
+        'senselight': SENSELIGHT
+    }
+
+
+def room_lighting_on():
+    return {
+        'style_name': 'Room Lighting',
+        'method_name': 'room_lighting',
+        'color': rand_color(),
+        'brightness': BRIGHTNESS,
+        'led_count': LED_COUNT,
+        'senselight': SENSELIGHT
+    }
+
+
+def room_lighting_off():
+    return {
+        'style_name': 'Room Lighting Off',
+        'method_name': 'room_lighting_off',
+        'color': ['black'],
+        'brightness': 0,
         'led_count': LED_COUNT,
         'senselight': SENSELIGHT
     }

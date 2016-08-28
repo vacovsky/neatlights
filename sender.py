@@ -27,4 +27,10 @@ def send_patterns(count):
         inc += 1
         time.sleep(.3)
 
-send_patterns(100)
+
+def button_send(action):
+    r = RedisHelper()
+    if action:
+        r.publish(config.PUBSUB_NAME, blink_patterns.room_lighting_on())
+    else:
+        r.publish(config.PUBSUB_NAME, blink_patterns.room_lighting_off())
