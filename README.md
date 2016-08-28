@@ -40,3 +40,10 @@ NOTE:  The Pi alone can power about 50 at max brightness, but any more will caus
 ### Pictures of the Breadboard
 Sorry, I this is kinda lazy.  I'll try to make a proper diagram later.
 
+![alt tag](https://raw.githubusercontent.com/vacoj/neatlights/master/images/pi1.jpg)
+
+![alt tag](https://raw.githubusercontent.com/vacoj/neatlights/master/images/pi2.jpg)
+
+![alt tag](https://raw.githubusercontent.com/vacoj/neatlights/master/images/pi3.jpg)
+
+![alt tag](https://raw.githubusercontent.com/vacoj/neatlights/master/images/pi4.jpg)
