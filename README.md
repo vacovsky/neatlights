@@ -37,6 +37,25 @@ In the ```config/config.py``` file, set up appropriate info for the redis pubsub
 ```
 NOTE:  The Pi alone can power about 50 at max brightness, but any more will cause it to lock up due to lack of available energy.  I added a 5v, 8Amp power supply to my lights to be able to power about 700 lights at 100 brightness.
 
+
+### Hardware
+ws2812(B) Addressable LED lights:
+https://www.amazon.com/s/ref=nb_sb_ss_xo_1_6/155-1522052-4634337?url=search-alias%3Daps&field-keywords=ws2812b&sprefix=ws2812%2Clawngarden%2C220
+
+Power Supply for LED strip (Optional)
+https://www.amazon.com/Led-World-Supply-Adapter-WS2812B/dp/B01D4P6VC8/ref=sr_1_33?ie=UTF8&qid=1472402743&sr=8-33&keywords=5v+8a+dc+power+supply
+
+Raspberry Pi 1 Model B(+) (This stuff won't work with anything newer than a Raspberry Pi 1 Model B(+) - bummer)
+https://www.amazon.com/Raspberry-Pi-756-8308-Motherboard-RASPBRRYPCBA512/dp/B009SQQF9C/ref=sr_1_3?ie=UTF8&qid=1472402399&sr=8-3&keywords=raspberry+pi+1+model+b
+
+Breakout adapter for Raspberry Pi 1 Model B
+https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=pi+1+breakout+26+pin&rh=i%3Aaps%2Ck%3Api+1+breakout+26+pin
+
+Also:
+Jumper Wires
+Breadboard
+
+
 ### Pictures of the Breadboard
 Sorry, I this is kinda lazy.  I'll try to make a proper diagram later.
 
