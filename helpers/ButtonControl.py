@@ -23,7 +23,7 @@ class ButtonControl:
                 print('Button Pressed')
                 self.execute_button_function(lighting_state)
                 lighting_state = not lighting_state
-                time.sleep(1)
+                time.sleep(0.3)
 
     def execute_button_function(self, action):
         button_send(action)
